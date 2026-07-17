@@ -28,6 +28,41 @@
     --color-foreground: var(--foreground);
     --color-background: var(--background);
 
+    /* / Editorial design tokens: surfaces */
+    --color-canvas: var(--canvas);
+    --color-canvas-soft: var(--canvas-soft);
+    --color-surface-card: var(--surface-card);
+    --color-surface-strong: var(--surface-strong);
+
+    /* // Hairlines */
+    --color-hairline: var(--hairline);
+    --color-hairline-soft: var(--hairline-soft);
+    --color-hairline-strong: var(--hairline-strong);
+
+    /* // Text */
+    --color-ink: var(--ink);
+    --color-body: var(--body);
+    --color-body-strong: var(--body-strong);
+    --color-muted-ink: var(--muted-ink);
+    --color-muted-soft: var(--muted-soft);
+    --color-on-primary: var(--on-primary);
+
+    /* // Brand */
+    --color-primary-active: var(--primary-active);
+
+    /* // Overlay pair: light cream type + dark scrim ink */
+    --color-overlay-cream: var(--overlay-cream);
+    --color-overlay-ink: var(--overlay-ink);
+
+    /* // Terminal palette — macOS-style window dots */
+    --color-term-red: var(--term-red);
+    --color-term-yellow: var(--term-yellow);
+    --color-term-green: var(--term-green);
+
+    /* // Semantic */
+    --color-success: var(--success);
+    --color-error: var(--error);
+
     /* Radius scale */
     --radius-xs: 4px;
     --radius-sm: 6px;
@@ -51,26 +86,61 @@
 }
 
 :root {
-    --background: #ffffff;
-    --foreground: #0a0a0a;
-    --card: #ffffff;
-    --card-foreground: #0a0a0a;
-    --popover: #ffffff;
-    --popover-foreground: #0a0a0a;
-    --primary: #1a1a1a;
-    --primary-foreground: #fafafa;
-    --secondary: #f4f4f5;
-    --secondary-foreground: #1a1a1a;
-    --muted: #f4f4f5;
-    --muted-foreground: #71717a;
-    --accent: #f4f4f5;
-    --accent-foreground: #1a1a1a;
-    --destructive: #e11d48;
-    --border: #e4e4e7;
-    --input: #e4e4e7;
-    --ring: #a1a1aa;
+    --background: var(--canvas);
+    --foreground: var(--ink);
+    --card: var(--surface-card);
+    --card-foreground: var(--ink);
+    --popover: var(--surface-card);
+    --popover-foreground: var(--ink);
+    --secondary: var(--surface-strong);
+    --secondary-foreground: var(--ink);
+    --muted: var(--canvas-soft);
+    --muted-foreground: var(--body);
+    --accent: var(--hairline-soft);
+    --accent-foreground: var(--ink);
+    --destructive: var(--error);
+    --border: var(--hairline);
+    --input: var(--hairline);
+    --ring: var(--hairline-strong);
 
     --radius: 0.5rem;
+
+     /* // Brand accent: used scarcely, primary CTAs + wordmark only */
+    --primary: #f54e00;
+    --primary-foreground: #ffffff;
+    --primary-active: #d04200;
+    --on-primary: #ffffff;
+
+    /* // Surfaces: warm cream canvas, never pure white */
+    --canvas: #f7f7f4;
+    --canvas-soft: #fafaf7;
+    --surface-card: #ffffff;
+    --surface-strong: #e6e5e0;
+
+    /* // Hairlines: depth via 1px lines, no shadows */
+    --hairline: #e6e5e0;
+    --hairline-soft: #efeee8;
+    --hairline-strong: #cfcdc4;
+
+    /* // Text: warm near-black ink */
+    --ink: #26251e;
+    --body: #5a5852;
+    --body-strong: #26251e;
+    --muted-ink: #807d72;
+    --muted-soft: #a09c92;
+
+    /* // Terminal palette — macOS-style window dots (stack.config mock only) */
+    --term-red: #ff5f57;
+    --term-yellow: #febc2e;
+    --term-green: #28c840;
+
+    /* // Overlay pair: cream type + ink scrim for media-backed regions */
+    --overlay-cream: #f7f6f1;
+    --overlay-ink: #0f0f0c;
+
+    /* // Semantic */
+    --success: #1f8a65;
+    --error: #cf2d56;
 }
 
 @layer base {
