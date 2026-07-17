@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import { SiteHeader } from "@/components/site-header"
 
 // Geist (sans) for text and Geist Mono for code. Exposed as CSS variables
 // so Tailwind can reference them via font-sans / font-mono.
@@ -32,7 +33,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         fontMono.variable
       )}
     >
-      <body>{children}</body>
+      <body>
+        
+        <SiteHeader />
+        {children}</body>
     </html>
   )
 }

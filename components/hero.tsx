@@ -70,6 +70,16 @@ export function Hero(): React.ReactElement {
             }}
         />
 
+
+
+        <div
+            className="absolute inset-x-0 top-0 h-32 -z-10"
+            style={{
+                background:
+                    "linear-gradient(to_bottom, rgba(15,15,12,0.55) 0%, rgba(15,15,12,0.10) 22%, rgba(15,15,12,0.32) 46%, rgba(15,15,12,0.32) 100%,)",
+            }}
+        />
+
         {/* forground */}
         <div className="relative z-10 flex h-full flex-col">
             <div className="h-16 shrink-0 sm:h-20 " />
