@@ -3,6 +3,8 @@ import Image from "next/image"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { ArrowUpRightIcon } from "@phosphor-icons/react"
+import { useRef, useState } from "react"
+import { cn } from "@/lib/utils"
 
 const MEDIA = {
     day: {
@@ -18,19 +20,45 @@ const MEDIA = {
 export function Hero(): React.ReactElement {
 
 
-    const { poster: posterSrc } = MEDIA["day"]
+    const [videoReady, setVideoReady] = useState(false);
+    const videoRef = useRef(null)
+
+
+    const { poster: posterSrc, video: videoSrc } = MEDIA["day"]
     return <section className="relative  isolate h-svh w-full overflow-hidden text-overlay-cream bg-overlay-ink">
 
         {/* Background image and video */}
 
         <div className="absolute inset-0 -z-20">
+
+
+
+            <video
+                ref={videoRef}
+
+                src={videoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster={posterSrc}
+
+                className="h-full w-full object-cover sm:object-center"
+                onCanPlay={() => setVideoReady(true)}
+            />
+
             <Image
                 src={posterSrc}
                 alt="Herobackground"
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover"
+                className={
+                    cn("object-cover transition-opacity duration-[900ms] ease-out",
+                        videoReady ? "opacity-0" : "opacity-100"
+                    )
+                }
             />
         </div>
         {/* overlay */}
