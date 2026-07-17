@@ -151,3 +151,14 @@
     @apply bg-background text-foreground;
     }
 }
+
+
+@layer components{
+  .caption-uppercase{
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
