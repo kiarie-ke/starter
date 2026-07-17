@@ -5,8 +5,9 @@ import Link from "next/link"
 import { ArrowUpRightIcon } from "@phosphor-icons/react"
 import { useRef, useState } from "react"
 import { cn } from "@/lib/utils"
+import { DayNightMode, DayNightSwitch } from "./widgets/day-night-switch"
 
-const MEDIA = {
+const MEDIA: Record< DayNightMode, {poster: string, video: string}> = {
     day: {
         poster: "/assets/hero-day-poster.webp",
         video: "/assets/hero-background-video.mp4",
@@ -19,12 +20,12 @@ const MEDIA = {
 
 export function Hero(): React.ReactElement {
 
-
+const [mode, setMode] = useState<DayNightMode>("day");
     const [videoReady, setVideoReady] = useState(false);
     const videoRef = useRef(null)
 
 
-    const { poster: posterSrc, video: videoSrc } = MEDIA["day"]
+    const { poster: posterSrc, video: videoSrc } = MEDIA[mode]
     return <section className="relative  isolate h-svh w-full overflow-hidden text-overlay-cream bg-overlay-ink">
 
         {/* Background image and video */}
@@ -130,6 +131,11 @@ export function Hero(): React.ReactElement {
                     </div>
 
                 </div>
+
+                <div className="absolute top-1/4 right-6 z-20 -translate-1/2 sm:right-10 lg:right-14">
+                    <DayNightSwitch value={mode} onChange={setMode}/>
+                </div>
+
 
             </div>
 
