@@ -1,4 +1,4 @@
-# Next.js 16 Modern Developer Portfolio - Tutorial Starter Files
+<!-- # Next.js 16 Modern Developer Portfolio - Tutorial Starter Files
 
 **The official starter files for the CodeBucks tutorial: build a modern, editorial developer portfolio website with Next.js 16, Tailwind CSS v4, and Framer Motion animations.**
 
@@ -10,23 +10,8 @@ These are the **assets + content** you'll use to follow along with the video —
 
 ---
 
-## 📺 Watch the full tutorial 👇
 
-> ▶️ *Click the following link to watch on YouTube.*
-👉🏻 **[Build a Modern Developer Portfolio with Next.js 16, Tailwind v4 & Motion →](https://youtu.be/1qJEZVr6eXE)**
-
-## ⚡ Want to skip ahead?
-
-Get the **complete, production-ready final source code** - every component, the day/night switch, the widgets, and all the Motion polish, assembled and ready to run.
-
-**[⚡ Get instant access to the final code →](https://store.dodopayments.com/codebucks)**
-
-> The final repo lands in your GitHub account via private invitation, so you can clone, customize, and deploy immediately.
-
----
-
-![Portfolio hero — day mode](./project-images/Portfolio-Hero-Day.png)
-
+>
 ## 🎯 What you'll build
 
 A production-quality **Next.js 16 portfolio website** with a warm, editorial "magazine" design system and choreographed motion:
@@ -112,14 +97,4 @@ bun dev            # or: npm run dev
 
 ---
 
-## 💬 Connect with CodeBucks
-
-- 📺 YouTube — [youtube.com/codebucks](https://www.youtube.com/codebucks)
-- 🐦 X / Twitter — [@code_bucks](https://twitter.com/code_bucks)
-- 🌐 Website — [devdreaming.com](https://devdreaming.com)
-- ✉️ Email — [codebucks27@gmail.com](mailto:codebucks27@gmail.com)
-- 🧩 **Need a custom website built?** [Start a project →](https://codebucks.agency)
-
----
-
-<p align="center"><em>Happy building and don't forget to ⭐ the repo!</em></p>
+ -->
