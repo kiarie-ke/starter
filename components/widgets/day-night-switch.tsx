@@ -2,6 +2,7 @@
 
 import { MoonIcon, SunIcon } from "@phosphor-icons/react/dist/ssr"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 
 export type DayNightMode = "day" | "night"
 
@@ -20,18 +21,18 @@ export function DayNightSwitch({ value, onChange }: Props): React.ReactElement {
             className="relative flex h-16 w-8 flex-col items-center justify-between rounded-full bg-overlay-ink/80 p-1.5 backdrop-blur-[6px] transition-colors"
         >
             {/* sliding thumb */}
-            <span
-                className={cn(
-                    "absolute left-1.5 flex size-5 items-center justify-center rounded-full bg-overlay-cream/90 text-overlay-ink transition-all duration-300",
-                    isDay ? "top-1.5" : "top-[calc(100%-1.5rem)]"
-                )}
+            <motion.span
+                layout
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                className="absolute left-1.5 flex size-5 items-center justify-center rounded-full bg-overlay-cream/90 text-overlay-ink"
+                style={{ top: isDay ? "0.375rem" : "calc(100% - 1.5rem)" }}
             >
                 {isDay ? (
                     <SunIcon size={13} weight="fill" />
                 ) : (
                     <MoonIcon size={13} weight="fill" />
                 )}
-            </span>
+            </motion.span>
 
             {/* faint marker for the inactive position */}
             <span
