@@ -10,13 +10,14 @@ import { ArrowDownIcon } from "@phosphor-icons/react/dist/ssr"
 import { Geolocation } from "@/lib/location"
 import { Weather } from "@/lib/weather"
 import { LiveLocator } from "./widgets/live-locator"
+import { TokenUsage } from "./widgets/token-usage"
 
 
 type HeroProps = {
     location: Geolocation,
     weather: Weather | null
 }
-const MEDIA: Record< DayNightMode, {poster: string, video: string}> = {
+const MEDIA: Record<DayNightMode, { poster: string, video: string }> = {
     day: {
         poster: "/assets/hero-day-poster.webp",
         video: "/assets/hero-background-video.mp4",
@@ -28,9 +29,9 @@ const MEDIA: Record< DayNightMode, {poster: string, video: string}> = {
 }
 
 
-export function Hero({location, weather}: HeroProps ): React.ReactElement {
+export function Hero({ location, weather }: HeroProps): React.ReactElement {
 
-const [mode, setMode] = useState<DayNightMode>("day");
+    const [mode, setMode] = useState<DayNightMode>("day");
     const [videoReady, setVideoReady] = useState(false);
     const videoRef = useRef(null)
 
@@ -143,41 +144,51 @@ const [mode, setMode] = useState<DayNightMode>("day");
                 </div>
 
                 <div className="absolute top-1/4 right-6 z-20 -translate-1/2 sm:right-10 lg:right-14">
-                    <DayNightSwitch value={mode} onChange={setMode}/>
+                    <DayNightSwitch value={mode} onChange={setMode} />
                 </div>
 
 
-               
+                <div className="pointer-events-none absolute right-6 sm:right-10 lg:right-14 bottom-24 z-20 flex justify-end items-end">
 
+                    <div className="pointer-events-auto">
+                        <TokenUsage />
 
                     </div>
 
-                     {/* bottom Strip */}
-                <div className="shrink-0 pb-7 sm:pb-9">
-
-                    {/* left label, scroll text,temp,clock,location */}
-
-                    <div className="mx-auto w-full max-w-[1480px] px-6 sm:px-10 lg:px-14 flex flex-col items-start sm:flex-row sm:justify-between gap-3 sm:gap-4">
-
-                        <p className="inline-flex items-center gap-2 rounded-full border border-overlay-cream/20 bg-overlay-ink/40 px-3 py-1.5 font-mono text-[11px] tracking-[0.04em] text-overlay-cream/85 backdrop-blur-[2px]">
-                            <span className="relative inline-flex size-1.5">
-                                <span className="absolute inline-flex h-full animate-ping rounded-full bg-success/70 opacity-75"/>
-                                <span className="relative inline-flex size-1.5 rounded-full bg-success"/>
-                            </span>
-                           Available for new work. Q3 2026
-                        </p>
-
-                        <div className="flex items-center gap-1 text-overlay-cream/70">
-                            <span className="flex items-center gap-3">
-                                <ArrowDownIcon size={14} weight="regular"/>
-                               <span className="caption-uppercase">Scroll</span> 
-
-                               <span className="h-px w-10 bg-overlay-cream/25"/>
-                            </span>
-                           <LiveLocator location={location} weather={weather} />
+                </div>
 
 
-                        </div>
+
+
+
+            </div>
+
+            {/* bottom Strip */}
+            <div className="shrink-0 pb-7 sm:pb-9">
+
+                {/* left label, scroll text,temp,clock,location */}
+
+                <div className="mx-auto w-full max-w-[1480px] px-6 sm:px-10 lg:px-14 flex flex-col items-start sm:flex-row sm:justify-between gap-3 sm:gap-4">
+
+                    <p className="inline-flex items-center gap-2 rounded-full border border-overlay-cream/20 bg-overlay-ink/40 px-3 py-1.5 font-mono text-[11px] tracking-[0.04em] text-overlay-cream/85 backdrop-blur-[2px]">
+                        <span className="relative inline-flex size-1.5">
+                            <span className="absolute inline-flex h-full animate-ping rounded-full bg-success/70 opacity-75" />
+                            <span className="relative inline-flex size-1.5 rounded-full bg-success" />
+                        </span>
+                        Available for new work. Q3 2026
+                    </p>
+
+                    <div className="flex items-center gap-1 text-overlay-cream/70">
+                        <span className="flex items-center gap-3">
+                            <ArrowDownIcon size={14} weight="regular" />
+                            <span className="caption-uppercase">Scroll</span>
+
+                            <span className="h-px w-10 bg-overlay-cream/25" />
+                        </span>
+                        <LiveLocator location={location} weather={weather} />
+
+
+                    </div>
 
                 </div>
 
