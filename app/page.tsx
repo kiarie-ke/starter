@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero";
+import { PracticeStripe } from "@/components/practice-strip";
 import { getLocation } from "@/lib/location";
 import { getWeather } from "@/lib/weather";
 // We'll replace this piece by piece as we build each section in the video.
@@ -11,6 +12,7 @@ export default async function HomePage() {
   return (
     <main className="relative">
      <Hero location={location} weather={weather}/>
+     <PracticeStripe />
     </main>
   )
 }

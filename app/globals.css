@@ -161,4 +161,9 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
+
+
+  .eyebrow{
+    @apply font-mono text-[11px] tracking-[0.14em];
+  }
 }
